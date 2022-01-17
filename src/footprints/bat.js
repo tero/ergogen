@@ -5,14 +5,14 @@ module.exports = {
     },
     params: {
         class: 'PAD', // for Button
-        reversible: false
+        reverse: false
     },
     body: p => {
       const header = `
         (module lib:bat (layer F.Cu) (tstamp 5BF2CC94)
             ${p.at /* parametric position */}
         `
-      if (p.params.reversible) {
+      if (p.param.reverse) {
         return `
             ${header}
             (pad 1 thru_hole circle (at 0 -3.24 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) ${p.net.pos.str})
